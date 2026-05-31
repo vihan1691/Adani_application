@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vihan Sharma — Senior Manager, Product · Adani Digital Labs</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0d0d0d;
+  --paper: #f5f0e8;
+  --cream: #ede8dc;
+  --adani: #003b7a;
+  --adani-light: #0052a8;
+  --gold: #c9982a;
+  --gold-light: #e8b84b;
+  --rule: rgba(0,59,122,0.15);
+  --muted: #5a5550;
+  --dim: #8a8078;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── MASTHEAD ── */
+.masthead {
+  background: var(--adani);
+  color: white;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+.masthead::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 80px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 80px
+    );
+}
+.masthead-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 32px 56px;
+}
+.mast-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.mast-label::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold-light);
+}
+.mast-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 8vw, 76px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+.mast-role {
+  font-size: clamp(14px, 2.5vw, 18px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.5px;
+  margin-bottom: 32px;
+}
+.mast-role em {
+  color: var(--gold-light);
+  font-style: normal;
+  font-weight: 500;
+}
+.mast-tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(16px, 3vw, 22px);
+  color: rgba(255,255,255,0.85);
+  max-width: 560px;
+  line-height: 1.5;
+  border-left: 2px solid var(--gold);
+  padding-left: 20px;
+  margin-bottom: 40px;
+}
+.mast-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+}
+.mast-contact a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.mast-contact a:hover { color: var(--gold-light); }
+.mast-contact span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── NAV BAR ── */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--adani);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav-inner::-webkit-scrollbar { display: none; }
+.nav-link {
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 14px 16px;
+  white-space: nowrap;
+  transition: color 0.2s;
+  border-bottom: 2px solid transparent;
+}
+.nav-link:hover { color: white; border-bottom-color: var(--gold); }
+
+/* ── MAIN CONTENT ── */
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ── SECTION HEADERS ── */
+.sec-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin: 60px 0 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+.sec-num {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.sec-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 700;
+  color: var(--adani);
+  line-height: 1.1;
+}
+
+/* ── OPENER SECTION ── */
+.opener {
+  margin: 52px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.opener-lede {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--adani);
+}
+.opener-body {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+.opener-body p + p { margin-top: 14px; }
+
+/* ── ADANI RESEARCH ── */
+.research-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 8px;
+}
+.r-card {
+  background: white;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.r-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--adani);
+}
+.r-card.gold::before { background: var(--gold); }
+.r-card.light::before { background: var(--adani-light); }
+.r-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--adani);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.r-num.gold { color: var(--gold); }
+.r-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--dim);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.r-body { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+.insight-box {
+  background: var(--adani);
+  color: white;
+  border-radius: 4px;
+  padding: 28px 32px;
+  margin-top: 20px;
+}
+.ib-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ib-label::before { content: '◆'; font-size: 8px; }
+.ib-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(16px, 2.5vw, 20px);
+  line-height: 1.5;
+  margin-bottom: 12px;
+  color: rgba(255,255,255,0.92);
+}
+.ib-body { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.65; }
+
+/* ── OPPORTUNITY SECTION ── */
+.opp-list { margin-top: 8px; }
+.opp-item {
+  display: flex;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.opp-item:last-child { border-bottom: none; }
+.opp-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--cream);
+  line-height: 1;
+  min-width: 48px;
+  user-select: none;
+}
+.opp-content { flex: 1; }
+.opp-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--adani);
+  margin-bottom: 6px;
+}
+.opp-body { font-size: 14px; color: var(--muted); line-height: 1.65; }
+.opp-tag {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+/* ── FIT SECTION ── */
+.fit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.fit-cell {
+  background: white;
+  padding: 24px;
+}
+.fit-cell:first-child, .fit-cell:nth-child(2) {
+  background: var(--adani);
+  color: white;
+}
+.fc-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.fit-cell:first-child .fc-label,
+.fit-cell:nth-child(2) .fc-label {
+  color: var(--gold-light);
+}
+.fit-cell:not(:first-child):not(:nth-child(2)) .fc-label {
+  color: var(--dim);
+}
+.fc-jd {
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+  font-style: italic;
+}
+.fc-match {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.fc-match strong { color: var(--adani); }
+
+/* ── STORIES ── */
+.story-list { margin-top: 8px; }
+.story {
+  background: white;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--adani);
+  border-radius: 0 4px 4px 0;
+  padding: 24px 28px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.story.gold-accent { border-left-color: var(--gold); }
+.story-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 8px;
+}
+.story-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--adani);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.story-body { font-size: 14px; color: var(--muted); line-height: 1.7; }
+.story-body strong { color: var(--ink); }
+.story-result {
+  margin-top: 14px;
+  padding: 10px 14px;
+  background: var(--paper);
+  border-radius: 3px;
+  font-size: 13px;
+  color: var(--adani);
+  font-weight: 500;
+}
+.story-result::before {
+  content: '↗ ';
+  color: var(--gold);
+}
+
+/* ── WHY ME CLOSER ── */
+.closer {
+  margin: 60px 0;
+  background: var(--adani);
+  border-radius: 4px;
+  padding: 52px 48px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.closer::before {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 40px solid rgba(201,152,42,0.12);
+}
+.closer-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+}
+.closer-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  max-width: 540px;
+}
+.closer-body {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.75;
+  max-width: 560px;
+  margin-bottom: 32px;
+}
+.closer-body p + p { margin-top: 14px; }
+.closer-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold);
+  color: var(--adani);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  padding: 14px 28px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.closer-cta:hover { background: var(--gold-light); }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 24px 32px;
+  font-size: 12px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .masthead-inner { padding: 40px 20px 44px; }
+  .main { padding: 0 20px; }
+  .opener { grid-template-columns: 1fr; gap: 20px; }
+  .research-grid { grid-template-columns: 1fr; }
+  .fit-grid { grid-template-columns: 1fr; }
+  .closer { padding: 36px 24px; }
+  .nav-inner { padding: 0 20px; }
+  .nav-link { padding: 12px 12px; font-size: 11px; }
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.mast-label   { animation: fadeUp 0.5s ease both; }
+.mast-name    { animation: fadeUp 0.5s 0.1s ease both; }
+.mast-role    { animation: fadeUp 0.5s 0.2s ease both; }
+.mast-tagline { animation: fadeUp 0.5s 0.3s ease both; }
+.mast-contact { animation: fadeUp 0.5s 0.4s ease both; }
+
+/* ── PULL QUOTE ── */
+.pull-quote {
+  border-top: 2px solid var(--adani);
+  border-bottom: 1px solid var(--rule);
+  padding: 28px 0;
+  margin: 40px 0;
+}
+.pq-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(17px, 3vw, 22px);
+  color: var(--adani);
+  line-height: 1.5;
+}
+.pq-source {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--dim);
+  letter-spacing: 0.5px;
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="mast-label">Application · Senior Manager, Product</div>
+    <div class="mast-name">Vihan Sharma</div>
+    <div class="mast-role">Senior PM · <em>Adani Digital Labs</em> · Ahmedabad</div>
+    <div class="mast-tagline">Consumer apps. Enterprise platforms. Eleven years. One consistent thread: products that actually get used.</div>
+    <div class="mast-contact">
+      <span>📍 Hyderabad, India</span>
+      <span>📞 +91-70322-08045</span>
+      <a href="mailto:vihan1691@gmail.com">✉ vihan1691@gmail.com</a>
+      <a href="https://linkedin.com/in/vihan-sharma" target="_blank">🔗 linkedin.com/in/vihan-sharma</a>
+    </div>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a class="nav-link" href="#research">Adani Context</a>
+    <a class="nav-link" href="#opportunity">The Opportunity</a>
+    <a class="nav-link" href="#fit">JD Fit</a>
+    <a class="nav-link" href="#stories">My Stories</a>
+    <a class="nav-link" href="#why">Why Me</a>
+  </div>
+</nav>
+
+<main class="main">
+
+  <!-- OPENER -->
+  <div class="opener">
+    <div class="opener-lede">I've spent eleven years building products that change behaviour at scale.<br>Here's why that matters for what Adani Digital Labs is building right now.</div>
+    <div class="opener-body">
+      <p>This isn't a standard cover letter. I built this page because I believe the best way to show you how I think about products is to actually show you how I think about yours.</p>
+      <p>I've researched Adani Digital Labs' current product strategy, identified where I see the real opportunity, and mapped my specific experience to what the JD requires. You can verify every claim I make in the resume attached to this application.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 1: ADANI CONTEXT -->
+  <section id="research">
+    <div class="sec-header">
+      <div class="sec-num">01</div>
+      <div class="sec-title">What I See When I Look at Adani Digital Labs</div>
+    </div>
+
+    <div class="research-grid">
+      <div class="r-card">
+        <div class="r-num">400M</div>
+        <div class="r-label">Existing Consumer Touchpoints</div>
+        <div class="r-body">Across airports, electricity, gas distribution, and CNG — Adani already reaches 400 million consumers. The data asset is extraordinary. The digital product layer on top of it is still being built.</div>
+      </div>
+      <div class="r-card gold">
+        <div class="r-num gold">8</div>
+        <div class="r-label">Adani-Managed Airports</div>
+        <div class="r-body">The OneApp relaunch in August 2025 pivoted from a broad super app to an airport-first digital companion — Adani Rewards, lounge booking, duty-free, gate delivery, real-time flight tracking. A focused, high-frequency touchpoint.</div>
+      </div>
+      <div class="r-card light">
+        <div class="r-num" style="color:var(--adani-light)">2025</div>
+        <div class="r-label">The Strategic Reset</div>
+        <div class="r-body">After investing ~$100M in the broad super app, Adani made the right call: pivot to what's working. The airport vertical has real user intent, high frequency, and clear monetisation. Now the job is execution.</div>
+      </div>
+      <div class="r-card">
+        <div class="r-num">1st</div>
+        <div class="r-label">Airport Loyalty Programme in India</div>
+        <div class="r-body">Adani Rewards is the first airport-specific loyalty programme in the Indian ecosystem — covering F&B, retail, duty-free, parking, and meet-and-greet. India's airports serve 400M+ passengers/year. The loyalty mechanic has barely been unlocked.</div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="ib-label">My Read on the Situation</div>
+      <div class="ib-title">"The super app pivot stalled because it tried to create new consumer habits from scratch. The airport pivot works because it meets users where a habit already exists — the airport visit — and adds digital value on top of it."</div>
+      <div class="ib-body">This is exactly the lesson I've learned shipping loyalty programmes. Behaviour change is hard. Behaviour enhancement — making an existing behaviour more rewarding — is dramatically easier. The OneApp's job isn't to create new visits to airports. It's to capture more value from visits that are already happening. That's a completely different product problem — and one I've spent years solving.</div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: OPPORTUNITY -->
+  <section id="opportunity">
+    <div class="sec-header">
+      <div class="sec-num">02</div>
+      <div class="sec-title">Where I See the Real Opportunity</div>
+    </div>
+
+    <div class="pull-quote">
+      <div class="pq-text">"Our objective is to diminish and alleviate travel-related anxiety for passengers."</div>
+      <div class="pq-source">— Srushti Adani, Director, Adani Digital Labs · August 2025</div>
+    </div>
+
+    <div class="opp-list">
+      <div class="opp-item">
+        <div class="opp-n">01</div>
+        <div class="opp-content">
+          <div class="opp-title">Loyalty Mechanics That Change Behaviour, Not Just Reward It</div>
+          <div class="opp-body">Most loyalty programmes fail the same way: they reward spending without changing frequency. Adani Rewards has the right instinct — airport-first, category-spanning. But the product question that will determine its success is: what action does the programme incentivise, and how does a user's behaviour change after enrolling? I ran a 12,000-donor A/B test specifically on this question. The answer isn't obvious — and getting it wrong with 400M potential users is expensive.</div>
+          <span class="opp-tag">My Direct Experience</span>
+        </div>
+      </div>
+      <div class="opp-item">
+        <div class="opp-n">02</div>
+        <div class="opp-content">
+          <div class="opp-title">WhatsApp as a First-Class Product Surface, Not an Afterthought</div>
+          <div class="opp-body">The JD specifically calls out WhatsApp. India's most underestimated product surface. Most companies treat it as a notification channel. The real opportunity is conversational commerce — flight check-in confirmation that leads to a lounge offer, a duty-free reminder timed to boarding. WhatsApp has 500M+ Indian users and zero friction to start a conversation. Building a WhatsApp-native experience that doesn't feel like a chatbot is one of the most interesting UX challenges in Indian consumer tech right now.</div>
+          <span class="opp-tag">High Conviction View</span>
+        </div>
+      </div>
+      <div class="opp-item">
+        <div class="opp-n">03</div>
+        <div class="opp-content">
+          <div class="opp-title">Making the Onboarding Moment the Product Moment</div>
+          <div class="opp-body">Every passenger at an Adani airport is a potential OneApp user — but most won't download an app without a compelling reason at the exact moment they're in the airport. The activation question is: what does the first 5 minutes of OneApp experience deliver that makes a user think "I should use this every time I fly"? Solving that onboarding-to-habit conversion problem is the most important growth lever this product has.</div>
+          <span class="opp-tag">Product Instinct</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: JD FIT -->
+  <section id="fit">
+    <div class="sec-header">
+      <div class="sec-num">03</div>
+      <div class="sec-title">The JD, Line by Line</div>
+    </div>
+
+    <div class="fit-grid">
+      <div class="fit-cell">
+        <div class="fc-label">The JD Says</div>
+        <div class="fc-jd">Drive digital KPIs through A/B testing, multivariate testing, personalized features, and products.</div>
+      </div>
+      <div class="fit-cell">
+        <div class="fc-label">My Experience</div>
+        <div class="fc-jd">8-week A/B experiment with 200,000 users. 12,000-donor multivariate test on promotions. 5% lift in donation frequency as a result. I also killed an experiment at scale when the data showed no lift — which is the harder discipline to demonstrate.</div>
+      </div>
+      <div class="fit-cell">
+        <div class="fc-label">The JD Says</div>
+        <div class="fc-match">Use digital measurement framework to build products and uncover optimization opportunities for defined KPIs such as conversion rates, page views, and installs.</div>
+      </div>
+      <div class="fit-cell">
+        <div class="fc-label">My Experience</div>
+        <div class="fc-match">At QuaQua, I identified session duration plateauing through analytics and redesigned the content product around it — <strong>28% increase in session duration</strong>. At Deloitte, I defined North Star metrics, guardrail metrics, and funnel analysis frameworks before any feature went into sprint.</div>
+      </div>
+      <div class="fit-cell">
+        <div class="fc-label">The JD Says</div>
+        <div class="fc-match">Participate in user feedback interviews and surveys to gather product intelligence and use it for new product feature and enhancement.</div>
+      </div>
+      <div class="fit-cell">
+        <div class="fc-label">My Experience</div>
+        <div class="fc-match">Led <strong>20+ usability sessions</strong> for a license management portal discovery. Built product requirements from time-and-motion studies in physical donation centers. Discovery is how I've started every product I've shipped.</div>
+      </div>
+      <div class="fit-cell">
+        <div class="fc-label">The JD Says</div>
+        <div class="fc-match">Drive digital consumer experience for customer products including web, mobile app, chatbot, and WhatsApp.</div>
+      </div>
+      <div class="fit-cell">
+        <div class="fc-label">My Experience</div>
+        <div class="fc-match">Built a consumer platform to <strong>1M+ MAU</strong> at QuaQua. Shipped a consumer-grade rewards app used across 220+ physical locations. Currently building agentic AI pipelines that deliver structured outputs through chat-based interfaces — the same design problem as a WhatsApp-native product.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: STORIES -->
+  <section id="stories">
+    <div class="sec-header">
+      <div class="sec-num">04</div>
+      <div class="sec-title">The Work That's Most Relevant to This Role</div>
+    </div>
+
+    <div class="story-list">
+
+      <div class="story">
+        <div class="story-eyebrow">Most Directly Relevant</div>
+        <div class="story-title">791,000 enrolments. 7 months. Treating enterprise like consumer.</div>
+        <div class="story-body">
+          At Deloitte Digital, I was embedded with a Fortune 500 life sciences client to build and scale a donor loyalty and rewards programme — starting from zero, scaling to 220+ centers across the US. The brief was essentially identical to what Adani OneApp needs to do: take a physical consumer touchpoint that's traditionally transactional, add a digital rewards layer, and change user behaviour through it.<br><br>
+          What made it work: I launched MVP at 10 centers first. Validated the core mechanic (do rewards actually change donation frequency?) before building the ecosystem. When the A/B data showed a <strong>5% lift in donation frequency</strong> within a 12,000-donor test cohort, I used that signal to accelerate the full rollout.<br><br>
+          What I learned that's directly applicable to Adani: the most important decision in a loyalty programme isn't the reward structure — it's defining exactly what behaviour you're trying to change and then measuring it with precision.
+        </div>
+        <div class="story-result">791,000+ enrolments · 50%+ adoption rate · 220+ locations · 7 months</div>
+      </div>
+
+      <div class="story gold-accent">
+        <div class="story-eyebrow">The Experiment I Killed</div>
+        <div class="story-title">200,000 users. 8 weeks. Called it when the data was clear.</div>
+        <div class="story-body">
+          We ran a gamified onboarding journey for 200,000 new donors — step completion mechanics, loyalty points on first action, visible progress indicators. The hypothesis: engagement with the journey would create momentum that translated to the core behaviour (donation).<br><br>
+          The data showed statistically insignificant lift versus control. Users engaged with the game. They just didn't donate more frequently. I recommended killing the feature and redirecting investment to loyalty tier mechanics.<br><br>
+          <strong>Why this story matters for Adani:</strong> Adani Rewards is launching into exactly this risk — that users collect points without the programme meaningfully changing their behaviour at the airport. The design discipline to measure the right metric (behaviour change, not engagement) and the courage to act on what the data shows — that's what I'd bring to the OneApp product team.
+        </div>
+        <div class="story-result">Experiment correctly killed · Resources redirected · Higher-performing mechanic shipped</div>
+      </div>
+
+      <div class="story">
+        <div class="story-eyebrow">0 → 1 Consumer Scale</div>
+        <div class="story-title">4th employee. 1 million monthly users. Within a year.</div>
+        <div class="story-body">
+          At QuaQua, I joined as the 4th employee and owned product completely — positioning, roadmap, build, growth, engagement. No PM team, no playbook, no budget for mistakes.<br><br>
+          When session duration plateaued at 2.5 minutes, I ran a build-vs-buy analysis and launched QuaQua TV — a curated content-channel experience that gave users a reason to stay longer. It scaled to 4 channels in 30 days and lifted average session duration from 2.5 to 3.2 minutes (28% increase).<br><br>
+          <strong>Why this matters for Adani:</strong> OneApp needs to move users from transaction mode ("I need to check my gate") to engagement mode ("I want to explore what's at this airport"). That's the same product problem QuaQua solved — turning a functional utility into a place users chose to spend time.
+        </div>
+        <div class="story-result">1M+ MAU within one year · 28% session duration increase · 4th employee → full product lifecycle</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CLOSER -->
+  <section id="why">
+    <div class="closer">
+      <div class="closer-label">Why This Role, Why Now</div>
+      <div class="closer-title">I've built the exact product Adani needs to get right.</div>
+      <div class="closer-body">
+        <p>A loyalty programme at physical consumer touchpoints, driven by digital mechanics, measured through A/B testing and behavioural data, and scaled from a pilot to hundreds of locations — I've shipped that. The fact that it was in a regulated US healthcare setting, not an Indian airport, is a detail. The product thinking is identical.</p>
+        <p>What I bring that's harder to find: I've also killed a loyalty experiment at scale when the data told me to. Most PMs can build a loyalty programme. Fewer have the discipline to measure it correctly and act on what they find.</p>
+        <p>I'd welcome a conversation about what Adani Digital Labs is building next, and where my experience maps most directly.</p>
+      </div>
+      <a class="closer-cta" href="mailto:vihan1691@gmail.com">
+        Start the conversation →
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  Vihan Sharma · Senior Manager, Product Application · Adani Digital Labs · 2026
+</footer>
+
+<script>
+// Smooth active nav highlight on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => l.style.borderBottomColor = 'transparent');
+      const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+      if (active) {
+        active.style.color = 'white';
+        active.style.borderBottomColor = 'var(--gold)';
+      }
+    }
+  });
+}, { threshold: 0.4 });
+sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
